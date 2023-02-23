@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
 
   padding: 2rem;
@@ -21,10 +21,12 @@ export const UserImage = styled.img`
 `
 
 export const Wrapper = styled.div`
-  height: 9.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  width: 100%;
+  min-height: 9.25rem;
 `
 
 export const Header = styled.header`
@@ -64,7 +66,7 @@ export const GithubAnchor = styled.a`
 `
 
 export const UserBio = styled.p`
-  margin: -0.8rem 0 0.5rem 0;
+  margin: 0.8rem 0 auto 0;
   line-height: 1.625rem;
   color: ${({ theme }) => theme.palette.gray[300]};
 `
@@ -73,6 +75,8 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+
+  margin-top: 1rem;
 `
 
 export const FooterItem = styled.span`
