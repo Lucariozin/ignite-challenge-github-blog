@@ -1,13 +1,16 @@
 import { Header } from '../../components/Header'
+import { UserSummary } from '../../components/UserSummary'
 
-import { Container } from './Home.styles'
+import { Container, Wrapper } from './Home.styles'
 
 export const Home = () => {
   return (
     <Container>
       <Header />
 
-      <h1>Home</h1>
+      <Wrapper>
+        <UserSummary />
+      </Wrapper>
     </Container>
   )
 }
