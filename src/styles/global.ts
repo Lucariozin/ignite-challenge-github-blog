@@ -10,4 +10,8 @@ export const GlobalStyles = createGlobalStyle`
   body, button, input, textarea {
     font-family: 'Nunito', sans-serif;
   }
+
+  body {
+    background-color: ${({ theme }) => theme.palette.gray[900]};
+  }
 `
