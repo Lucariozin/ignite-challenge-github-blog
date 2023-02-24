@@ -1,9 +1,9 @@
 import { Container, LeftEffectImg, LogoImg, RightEffectImg } from './Header.styles'
 
-import leftEffectImg from '../../assets/header/left-effect-img.svg'
-import rightEffectImg from '../../assets/header/right-effect-img.svg'
+import leftEffectImg from '@assets/header/left-effect-img.svg'
+import rightEffectImg from '@assets/header/right-effect-img.svg'
 
-import logoImg from '../../assets/header/logo-img.svg'
+import logoImg from '@assets/header/logo-img.svg'
 
 export const Header = () => {
   return (

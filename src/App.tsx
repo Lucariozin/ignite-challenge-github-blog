@@ -1,9 +1,9 @@
 import { ThemeProvider } from 'styled-components'
 
-import { GlobalStyles } from './styles/global'
-import { theme } from './styles/theme'
+import { GlobalStyles } from '@styles/global'
+import { theme } from '@styles/theme'
 
-import { Home } from './pages/Home'
+import { Home } from '@pages/Home'
 
 export const App = () => {
   return (

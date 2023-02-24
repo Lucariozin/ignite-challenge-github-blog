@@ -1,6 +1,6 @@
-import { Header } from '../../components/Header'
-import { UserSummary } from '../../components/UserSummary'
-import { FindPublications } from '../../components/FindPublications'
+import { Header } from '@components/Header'
+import { UserSummary } from '@components/UserSummary'
+import { FindPublications } from '@components/FindPublications'
 
 import { Container, Wrapper } from './Home.styles'
 
