@@ -16,6 +16,7 @@ export const githubIssuesDataAdapter = (data: APIGithubIssuesData): GithubIssues
   return {
     issuesAmount: data.total_count,
     items: data.items.map((item) => ({
+      id: item.id,
       title: item.title,
       body: item.body,
       issueUrl: item.url,

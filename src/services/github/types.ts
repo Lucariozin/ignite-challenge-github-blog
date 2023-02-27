@@ -26,6 +26,7 @@ export type GithubUserData = {
 export type APIGithubIssuesData = {
   total_count: number
   items: {
+    id: number
     url: string
     title: string
     body: string
@@ -38,6 +39,7 @@ export type APIGithubIssuesData = {
 }
 
 type Issue = {
+  id: number
   title: string
   body: string
   issueUrl: string

@@ -6,6 +6,8 @@ export const Container = styled.div`
 
   border-radius: 10px;
   background-color: ${({ theme }) => theme.palette.gray[700]};
+
+  cursor: pointer;
 `
 
 export const Header = styled.header`
