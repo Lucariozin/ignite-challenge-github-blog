@@ -33,7 +33,7 @@ export const PublicationDate = styled.span`
   color: ${({ theme }) => theme.palette.gray[400]};
 `
 
-export const Content = styled.p`
+export const Content = styled.div`
   margin-top: 1.25rem;
 
   line-height: 1.625rem;

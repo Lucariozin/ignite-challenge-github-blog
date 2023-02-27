@@ -31,11 +31,8 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    const getGithubData = async () => {
-      await Promise.all([getGithubUserData(), getGithubIssuesData()])
-    }
-
-    getGithubData()
+    getGithubUserData()
+    getGithubIssuesData()
   }, [])
 
   return (
