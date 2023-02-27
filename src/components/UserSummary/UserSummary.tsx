@@ -12,40 +12,59 @@ import {
   Wrapper,
 } from './UserSummary.styles'
 
-export const UserSummary = () => {
+interface UserSummaryProps {
+  avatarUrl?: string
+  name?: string
+  nickName?: string
+  bio?: string | null
+  company?: string | null
+  followers?: number
+  githubUrl?: string
+}
+
+export const UserSummary = ({
+  avatarUrl = '',
+  name = '',
+  nickName = '',
+  bio = '',
+  company,
+  followers = 0,
+  githubUrl = '',
+}: UserSummaryProps) => {
+  const followersAmountText = `${followers} ${followers === 1 ? 'seguidor' : 'seguidores'}`
+
   return (
     <Container>
-      <UserImage src="https://github.com/Lucariozin.png" alt="" width={148} height={148} />
+      <UserImage src={avatarUrl} alt="" width={148} height={148} />
 
       <Wrapper>
         <Header>
-          <UserName>Lucas Felix</UserName>
+          <UserName>{name}</UserName>
 
-          <GithubAnchor href="https://youtube.com" target="_blank">
+          <GithubAnchor href={githubUrl} target="_blank">
             GITHUB
             <FaExternalLinkAlt size={12} />
           </GithubAnchor>
         </Header>
 
-        <UserBio>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam debitis rem voluptates officiis
-          distinctio dignissimos commodi.
-        </UserBio>
+        <UserBio>{bio}</UserBio>
 
         <Footer>
           <FooterItem>
             <FaGithub size={18} />
-            Lucariozin
+            {nickName}
           </FooterItem>
 
-          <FooterItem>
-            <FaBuilding size={16} />
-            Rocketseat
-          </FooterItem>
+          {company && (
+            <FooterItem>
+              <FaBuilding size={16} />
+              {company}
+            </FooterItem>
+          )}
 
           <FooterItem>
             <FaUserFriends size={20} />
-            32 seguidores
+            {followersAmountText}
           </FooterItem>
         </Footer>
       </Wrapper>

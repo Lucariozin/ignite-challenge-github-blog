@@ -22,6 +22,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
+      "@services/*": ["./src/services/*"]
     }
   },
   "include": ["src"],
