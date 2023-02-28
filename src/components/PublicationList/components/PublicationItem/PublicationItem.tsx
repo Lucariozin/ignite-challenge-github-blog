@@ -3,16 +3,19 @@ import ReactMarkDown from 'react-markdown'
 import { Container, Content, Header, PublicationDate, Title } from './PublicationItem.styles'
 
 interface PublicationItemProps {
+  id: number
   title: string
   body: string
   creationDate: Date
 }
 
-export const PublicationItem = ({ title = '', body = '', creationDate = new Date() }: PublicationItemProps) => {
+export const PublicationItem = ({ id, title = '', body = '', creationDate = new Date() }: PublicationItemProps) => {
+  const publicationPage = `/publications/${id}`
+
   const formattedContent = body.slice(0, 140) + '...'
 
   return (
-    <Container title="Ver publicação">
+    <Container to={publicationPage}>
       <Header>
         <Title>{title}</Title>
 

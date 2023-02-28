@@ -12,7 +12,7 @@ export const PublicationList = ({ publications = [] }: PublicationListProps) => 
   return (
     <Container>
       {publications.map(({ id, title, creationDate, body }) => (
-        <PublicationItem key={id} title={title} body={body} creationDate={creationDate} />
+        <PublicationItem key={id} id={id} title={title} body={body} creationDate={creationDate} />
       ))}
     </Container>
   )

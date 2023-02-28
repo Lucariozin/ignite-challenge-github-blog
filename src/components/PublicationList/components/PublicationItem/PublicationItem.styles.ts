@@ -1,13 +1,22 @@
+import { NavLink } from 'react-router-dom'
+
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled(NavLink)`
   max-width: 26rem;
   padding: 2rem;
 
   border-radius: 10px;
+  border: 2px solid ${({ theme }) => theme.palette.gray[700]};
   background-color: ${({ theme }) => theme.palette.gray[700]};
 
   cursor: pointer;
+  transition: border-color 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.palette.gray[500]};
+  }
 `
 
 export const Header = styled.header`
