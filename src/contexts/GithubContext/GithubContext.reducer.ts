@@ -10,6 +10,13 @@ const ActionsFunctions: {
 
     return { ...state, user }
   },
+  SET_GITHUB_PUBLICATIONS: ({ state, payload }) => {
+    if (!payload?.publications) return state
+
+    const { publications } = payload
+
+    return { ...state, publications }
+  },
 }
 
 export const reducer = (state: GithubContextState, action: Action): GithubContextState => {

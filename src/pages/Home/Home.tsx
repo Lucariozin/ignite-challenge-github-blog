@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 
 import { fetchGithubIssuesData, fetchGithubUserData } from '@services/github'
-import type { GithubIssuesData, GithubUserData } from '@services/github/types'
+
+import { useGithub } from '@contexts/GithubContext'
 
 import { UserSummary } from '@components/UserSummary'
 import { PublicationList } from '@components/PublicationList'
 import { FindPublications } from '@components/FindPublications'
 
 export const Home = () => {
-  const [githubUserData, setGithubUserData] = useState<GithubUserData | null>(null)
-  const [githubIssuesData, setGithubIssuesData] = useState<GithubIssuesData | null>(null)
+  const { setUser, setPublications, user, publications, publicationsAmount } = useGithub()
 
-  const getGithubUserData = async () => {
+  const getGithubUserData = useCallback(async () => {
     const { data, status } = await fetchGithubUserData({ githubNickName: 'Lucariozin' })
 
     if (status === 'failed' || !data) return
 
-    setGithubUserData(data)
-  }
+    setUser(data)
+  }, [setUser])
 
-  const getGithubIssuesData = async () => {
+  const getGithubIssuesData = useCallback(async () => {
     const { data, status } = await fetchGithubIssuesData({
       githubNickName: 'Lucariozin',
       repo: 'ignite-challenge-github-blog',
@@ -27,21 +27,21 @@ export const Home = () => {
 
     if (status === 'failed' || !data) return
 
-    setGithubIssuesData(data)
-  }
+    setPublications(data.items)
+  }, [setPublications])
 
   useEffect(() => {
     getGithubUserData()
     getGithubIssuesData()
-  }, [])
+  }, [getGithubUserData, getGithubIssuesData])
 
   return (
     <>
-      <UserSummary {...githubUserData} />
+      <UserSummary {...user} />
 
-      <FindPublications publicationsAmount={githubIssuesData?.issuesAmount} />
+      <FindPublications publicationsAmount={publicationsAmount} />
 
-      <PublicationList publications={githubIssuesData?.items} />
+      <PublicationList publications={publications} />
     </>
   )
 }

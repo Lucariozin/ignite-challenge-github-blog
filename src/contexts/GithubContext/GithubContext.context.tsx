@@ -2,7 +2,7 @@ import { createContext, ReactNode, useCallback, useContext, useReducer } from 'r
 
 import { reducer } from './GithubContext.reducer'
 
-import type { GithubContextState, User } from './GithubContext.types'
+import type { GithubContextState, Publication, User } from './GithubContext.types'
 
 const initialState: GithubContextState = {
   user: {
@@ -42,5 +42,12 @@ export const useGithub = () => {
     [dispatch],
   )
 
-  return { ...state, setUser }
+  const setPublications = useCallback(
+    (publications: Publication[]) => {
+      dispatch({ type: 'SET_GITHUB_PUBLICATIONS', payload: { publications } })
+    },
+    [dispatch],
+  )
+
+  return { ...state, setUser, setPublications }
 }
