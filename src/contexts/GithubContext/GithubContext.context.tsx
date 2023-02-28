@@ -1,4 +1,6 @@
-import { createContext, ReactNode, useCallback, useContext, useReducer } from 'react'
+import { createContext, ReactNode, useCallback, useContext, useEffect, useReducer } from 'react'
+
+import { fetchGithubIssuesData, fetchGithubUserData } from '@services/github'
 
 import { reducer } from './GithubContext.reducer'
 
@@ -48,6 +50,30 @@ export const useGithub = () => {
     },
     [dispatch],
   )
+
+  const getGithubUserData = useCallback(async () => {
+    const { data, status } = await fetchGithubUserData({ githubNickName: 'Lucariozin' })
+
+    if (status === 'failed' || !data) return
+
+    setUser(data)
+  }, [setUser])
+
+  const getGithubIssuesData = useCallback(async () => {
+    const { data, status } = await fetchGithubIssuesData({
+      githubNickName: 'Lucariozin',
+      repo: 'ignite-challenge-github-blog',
+    })
+
+    if (status === 'failed' || !data) return
+
+    setPublications(data.items)
+  }, [setPublications])
+
+  useEffect(() => {
+    getGithubUserData()
+    getGithubIssuesData()
+  }, [getGithubUserData, getGithubIssuesData])
 
   return { ...state, setUser, setPublications }
 }
