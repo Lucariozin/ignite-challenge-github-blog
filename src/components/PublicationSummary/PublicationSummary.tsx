@@ -3,7 +3,23 @@ import { FaCalendarDay, FaComment, FaExternalLinkAlt, FaGithub } from 'react-ico
 
 import { Container, Footer, FooterItem, GithubAnchor, GoBackButton, Header, Title } from './PublicationSummary.styles'
 
-export const PublicationSummary = () => {
+interface PublicationSummaryProps {
+  title: string
+  publicationUrl: string
+  nickName: string
+  creationDate: Date
+  commentsAmount: number
+}
+
+export const PublicationSummary = ({
+  title = '',
+  publicationUrl = '',
+  nickName = '',
+  creationDate = new Date(),
+  commentsAmount = 0,
+}: PublicationSummaryProps) => {
+  const commentsAmountText = `${commentsAmount} ${commentsAmount === 1 ? 'comentário' : 'comentários'}`
+
   return (
     <Container>
       <Header>
@@ -11,24 +27,24 @@ export const PublicationSummary = () => {
           <MdArrowBackIos size={16} /> VOLTAR
         </GoBackButton>
 
-        <GithubAnchor href="#" target="_blank">
+        <GithubAnchor href={publicationUrl} target="_blank">
           VER NO GITHUB <FaExternalLinkAlt size={12} />
         </GithubAnchor>
       </Header>
 
-      <Title>JavaScript data types and data structures</Title>
+      <Title>{title}</Title>
 
       <Footer>
         <FooterItem>
-          <FaGithub size={18} /> Lucariozin
+          <FaGithub size={18} /> {nickName}
         </FooterItem>
 
         <FooterItem>
-          <FaCalendarDay size={18} /> Há 1 dia
+          <FaCalendarDay size={18} /> {creationDate.toDateString()}
         </FooterItem>
 
         <FooterItem>
-          <FaComment size={18} /> 5 comentários
+          <FaComment size={18} /> {commentsAmountText}
         </FooterItem>
       </Footer>
     </Container>

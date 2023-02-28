@@ -20,6 +20,7 @@
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
       "@layouts/*": ["./src/layouts/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@services/*": ["./src/services/*"]

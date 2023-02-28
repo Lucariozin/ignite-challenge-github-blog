@@ -19,7 +19,7 @@ export const githubIssuesDataAdapter = (data: APIGithubIssuesData): GithubIssues
       id: item.id,
       title: item.title,
       body: item.body,
-      issueUrl: item.url,
+      publicationUrl: item.html_url,
       userNickName: item.user.login,
       commentsAmount: item.comments,
       creationDate: new Date(item.created_at),

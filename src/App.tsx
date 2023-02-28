@@ -3,6 +3,8 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '@styles/global'
 import { theme } from '@styles/theme'
 
+import { GithubProvider } from '@contexts/GithubContext'
+
 import { Router } from './Router'
 
 export const App = () => {
@@ -10,7 +12,9 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
 
-      <Router />
+      <GithubProvider>
+        <Router />
+      </GithubProvider>
     </ThemeProvider>
   )
 }

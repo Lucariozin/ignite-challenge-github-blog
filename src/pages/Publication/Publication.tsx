@@ -1,15 +1,24 @@
 import { useParams } from 'react-router-dom'
 
+import { useGithub } from '@contexts/GithubContext'
+
 import { PublicationSummary } from '@components/PublicationSummary'
 
 export const Publication = () => {
+  const { user, publications } = useGithub()
   const params = useParams()
 
-  console.log(params.id)
+  const publication = publications.filter((publication) => String(publication.id) === params.id)[0]
 
   return (
     <>
-      <PublicationSummary />
+      <PublicationSummary
+        title={publication?.title}
+        nickName={user.nickName}
+        publicationUrl={publication?.publicationUrl}
+        commentsAmount={publication?.commentsAmount}
+        creationDate={publication?.creationDate}
+      />
     </>
   )
 }

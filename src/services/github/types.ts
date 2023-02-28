@@ -27,7 +27,7 @@ export type APIGithubIssuesData = {
   total_count: number
   items: {
     id: number
-    url: string
+    html_url: string
     title: string
     body: string
     user: {
@@ -42,7 +42,7 @@ type Issue = {
   id: number
   title: string
   body: string
-  issueUrl: string
+  publicationUrl: string
   userNickName: string
   commentsAmount: number
   creationDate: Date
