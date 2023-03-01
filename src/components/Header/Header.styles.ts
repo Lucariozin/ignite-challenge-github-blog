@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.header`
@@ -19,7 +20,10 @@ export const RightEffectImg = styled.img`
   user-select: none;
 `
 
-export const LogoImg = styled.img`
+export const LogoAnchor = styled(NavLink)`
   margin: 2rem 0 auto 0;
+`
+
+export const LogoImg = styled.img`
   user-select: none;
 `
