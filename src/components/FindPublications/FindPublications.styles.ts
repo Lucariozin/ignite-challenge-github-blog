@@ -25,7 +25,14 @@ export const PublicationsAmount = styled.span`
   color: ${({ theme }) => theme.palette.gray[400]};
 `
 
+export const PublicationForm = styled.form`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`
+
 export const Input = styled.input`
+  width: 100%;
   height: 3.125rem;
   padding: 0 1rem;
 
@@ -44,6 +51,37 @@ export const Input = styled.input`
   }
 
   &:focus-visible {
+    border: 1px solid ${({ theme }) => theme.palette.blue[400]};
+  }
+`
+
+export const SearchButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 3.125rem;
+  height: 3.125rem;
+
+  border-radius: 6px;
+  border: 1px solid ${({ theme }) => theme.palette.gray[600]};
+
+  color: ${({ theme }) => theme.palette.blue[400]};
+  background-color: ${({ theme }) => theme.palette.gray[700]};
+
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  &:disabled {
+    filter: brightness(0.8);
+  }
+
+  &:not(:disabled):hover {
+    background-color: ${({ theme }) => theme.palette.gray[600]};
+  }
+
+  &:focus-visible {
+    outline: 0;
     border: 1px solid ${({ theme }) => theme.palette.blue[400]};
   }
 `

@@ -17,6 +17,11 @@ export const Container = styled(NavLink)`
   &:hover {
     border: 2px solid ${({ theme }) => theme.palette.gray[500]};
   }
+
+  &:focus-visible {
+    border: 2px solid ${({ theme }) => theme.palette.blue[400]};
+    outline: 0;
+  }
 `
 
 export const Header = styled.header`
