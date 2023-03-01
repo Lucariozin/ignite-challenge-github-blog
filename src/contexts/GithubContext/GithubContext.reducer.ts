@@ -17,6 +17,13 @@ const ActionsFunctions: {
 
     return { ...state, publications }
   },
+  SET_GITHUB_PUBLICATIONS_AMOUNT: ({ state, payload }) => {
+    if (!payload?.publicationsAmount) return state
+
+    const { publicationsAmount } = payload
+
+    return { ...state, publicationsAmount }
+  },
 }
 
 export const reducer = (state: GithubContextState, action: Action): GithubContextState => {

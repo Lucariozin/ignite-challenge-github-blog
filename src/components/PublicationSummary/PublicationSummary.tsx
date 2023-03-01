@@ -9,6 +9,7 @@ interface PublicationSummaryProps {
   nickName: string
   creationDate: Date
   commentsAmount: number
+  goToThePreviousPage: () => void
 }
 
 export const PublicationSummary = ({
@@ -17,13 +18,14 @@ export const PublicationSummary = ({
   nickName = '',
   creationDate = new Date(),
   commentsAmount = 0,
+  goToThePreviousPage = () => {},
 }: PublicationSummaryProps) => {
   const commentsAmountText = `${commentsAmount} ${commentsAmount === 1 ? 'comentário' : 'comentários'}`
 
   return (
     <Container>
       <Header>
-        <GoBackButton>
+        <GoBackButton onClick={goToThePreviousPage}>
           <MdArrowBackIos size={16} /> VOLTAR
         </GoBackButton>
 

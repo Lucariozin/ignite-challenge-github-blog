@@ -24,11 +24,12 @@ export type Publication = {
 
 // Reducer
 
-export type ActionType = 'SET_GITHUB_USER' | 'SET_GITHUB_PUBLICATIONS'
+export type ActionType = 'SET_GITHUB_USER' | 'SET_GITHUB_PUBLICATIONS' | 'SET_GITHUB_PUBLICATIONS_AMOUNT'
 
 export type Payload = {
   user?: User
   publications?: Publication[]
+  publicationsAmount?: number
 }
 
 export type Action = {

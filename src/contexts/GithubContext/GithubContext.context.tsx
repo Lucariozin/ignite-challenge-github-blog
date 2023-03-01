@@ -51,6 +51,13 @@ export const useGithub = () => {
     [dispatch],
   )
 
+  const setPublicationsAmount = useCallback(
+    (publicationsAmount: number) => {
+      dispatch({ type: 'SET_GITHUB_PUBLICATIONS_AMOUNT', payload: { publicationsAmount } })
+    },
+    [dispatch],
+  )
+
   const getGithubUserData = useCallback(async () => {
     const { data, status } = await fetchGithubUserData({ githubNickName: 'Lucariozin' })
 
@@ -68,12 +75,13 @@ export const useGithub = () => {
     if (status === 'failed' || !data) return
 
     setPublications(data.items)
-  }, [setPublications])
+    setPublicationsAmount(data.issuesAmount)
+  }, [setPublications, setPublicationsAmount])
 
   useEffect(() => {
     getGithubUserData()
     getGithubIssuesData()
   }, [getGithubUserData, getGithubIssuesData])
 
-  return { ...state, setUser, setPublications }
+  return { ...state, setUser, setPublications, setPublicationsAmount }
 }
