@@ -1,6 +1,8 @@
 import { MdArrowBackIos } from 'react-icons/md'
 import { FaCalendarDay, FaComment, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 
+import { formatDate } from '@utils/formatDate'
+
 import { Container, Footer, FooterItem, GithubAnchor, GoBackButton, Header, Title } from './PublicationSummary.styles'
 
 interface PublicationSummaryProps {
@@ -20,6 +22,8 @@ export const PublicationSummary = ({
   commentsAmount = 0,
   goToThePreviousPage = () => {},
 }: PublicationSummaryProps) => {
+  const formattedCreationDate = formatDate(creationDate)
+
   const commentsAmountText = `${commentsAmount} ${commentsAmount === 1 ? 'comentário' : 'comentários'}`
 
   return (
@@ -42,7 +46,7 @@ export const PublicationSummary = ({
         </FooterItem>
 
         <FooterItem>
-          <FaCalendarDay size={18} /> {creationDate.toDateString()}
+          <FaCalendarDay size={18} /> {formattedCreationDate}
         </FooterItem>
 
         <FooterItem>

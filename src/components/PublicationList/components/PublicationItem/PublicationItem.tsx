@@ -1,5 +1,7 @@
 import ReactMarkDown from 'react-markdown'
 
+import { formatDate } from '@utils/formatDate'
+
 import { Container, Content, Header, PublicationDate, Title } from './PublicationItem.styles'
 
 interface PublicationItemProps {
@@ -12,6 +14,8 @@ interface PublicationItemProps {
 export const PublicationItem = ({ id, title = '', body = '', creationDate = new Date() }: PublicationItemProps) => {
   const publicationPage = `/publications/${id}`
 
+  const formattedPublicationDate = formatDate(creationDate)
+
   const formattedContent = body.slice(0, 140) + '...'
 
   return (
@@ -19,7 +23,7 @@ export const PublicationItem = ({ id, title = '', body = '', creationDate = new 
       <Header>
         <Title>{title}</Title>
 
-        <PublicationDate>{creationDate.toDateString()}</PublicationDate>
+        <PublicationDate>{formattedPublicationDate}</PublicationDate>
       </Header>
 
       <Content>
