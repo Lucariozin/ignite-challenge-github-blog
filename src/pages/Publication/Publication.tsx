@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useGithub } from '@contexts/GithubContext'
 
 import { PublicationSummary } from '@components/PublicationSummary'
+import { PublicationContent } from '@components/PublicationContent'
 
 export const Publication = () => {
   const { user, publications } = useGithub()
@@ -24,6 +25,8 @@ export const Publication = () => {
         creationDate={publication?.creationDate}
         goToThePreviousPage={goToThePreviousPage}
       />
+
+      <PublicationContent content={publication?.body} />
     </>
   )
 }

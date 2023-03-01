@@ -1,0 +1,1 @@
+export { PublicationContent } from './PublicationContent'
