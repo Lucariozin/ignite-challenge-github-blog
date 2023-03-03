@@ -9,6 +9,8 @@ import { FaSearch } from 'react-icons/fa'
 
 import { fetchGithubIssuesData } from '@services/github'
 
+import { delay } from '@utils/delay'
+
 import { useGithub } from '@contexts/GithubContext'
 
 import {
@@ -32,8 +34,6 @@ const zodSchema = zod.object({
 })
 
 type PublicationFormInputs = zod.infer<typeof zodSchema>
-
-const delay = async () => await new Promise((resolve) => setTimeout(resolve, 2000))
 
 export const FindPublications = ({
   publicationsAmount = 0,
