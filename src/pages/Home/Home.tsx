@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { useGithub } from '@contexts/GithubContext'
 
 import { UserSummary } from '@components/UserSummary'
-import { PublicationList } from '@components/PublicationList'
 import { FindPublications } from '@components/FindPublications'
+import { PublicationList, PublicationListSkeleton } from '@components/PublicationList'
 
 export const Home = () => {
   const { user, publications, publicationsAmount } = useGithub()
@@ -17,7 +17,7 @@ export const Home = () => {
 
       <FindPublications publicationsAmount={publicationsAmount} isLoading={isLoading} setIsLoading={setIsLoading} />
 
-      <PublicationList publications={publications} />
+      {isLoading ? <PublicationListSkeleton /> : <PublicationList publications={publications} />}
     </>
   )
 }
