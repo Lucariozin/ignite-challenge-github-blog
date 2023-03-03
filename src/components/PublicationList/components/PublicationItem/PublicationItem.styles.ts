@@ -24,6 +24,17 @@ export const Container = styled(NavLink)`
   }
 `
 
+export const SkeletonContainer = styled.div`
+  max-width: 26rem;
+  padding: 2rem;
+
+  border-radius: 10px;
+  border: 2px solid ${({ theme }) => theme.palette.gray[700]};
+  background-color: ${({ theme }) => theme.palette.gray[700]};
+
+  cursor: not-allowed;
+`
+
 export const Header = styled.header`
   display: flex;
   align-items: flex-start;
