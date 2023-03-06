@@ -40,6 +40,7 @@ export const useGithub = () => {
   const { dispatch, ...state } = useContext(GithubContext)
 
   const [githubUserDataIsFetching, setGithubUserDataIsFetching] = useState(false)
+  const [githubIssuesDataIsFetching, setGithubIssuesDataIsFetching] = useState(false)
 
   const setUser = useCallback(
     (user: User) => {
@@ -78,15 +79,25 @@ export const useGithub = () => {
   }, [setUser])
 
   const getGithubIssuesData = useCallback(async () => {
-    const { data, status } = await fetchGithubIssuesData({
-      githubNickName: 'Lucariozin',
-      repo: 'ignite-challenge-github-blog',
-    })
+    setGithubIssuesDataIsFetching(true)
 
-    if (status === 'failed' || !data) return
+    const [{ data, status }] = await Promise.all([
+      fetchGithubIssuesData({
+        githubNickName: 'Lucariozin',
+        repo: 'ignite-challenge-github-blog',
+      }),
+      delay(1000),
+    ])
+
+    if (status === 'failed' || !data) {
+      setGithubIssuesDataIsFetching(false)
+      return
+    }
 
     setPublications(data.items)
     setPublicationsAmount(data.issuesAmount)
+
+    setGithubIssuesDataIsFetching(false)
   }, [setPublications, setPublicationsAmount])
 
   useEffect(() => {
@@ -94,5 +105,13 @@ export const useGithub = () => {
     getGithubIssuesData()
   }, [getGithubUserData, getGithubIssuesData])
 
-  return { ...state, githubUserDataIsFetching, setUser, setPublications, setPublicationsAmount }
+  return {
+    ...state,
+    githubUserDataIsFetching,
+    githubIssuesDataIsFetching,
+    setGithubIssuesDataIsFetching,
+    setUser,
+    setPublications,
+    setPublicationsAmount,
+  }
 }
