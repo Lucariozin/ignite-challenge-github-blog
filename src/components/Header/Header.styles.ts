@@ -13,6 +13,18 @@ export const Container = styled.header`
   background-image: ${({ theme }) => `linear-gradient(to top, #14589c62, ${theme.palette.gray[800]})`};
 `
 
+export const LeftEffectImgContainer = styled.div`
+  max-width: 409px;
+  width: 100%;
+  overflow: hidden;
+`
+
+export const RightEffectImgContainer = styled.div`
+  max-width: 371px;
+  width: 100%;
+  overflow: hidden;
+`
+
 export const LeftEffectImg = styled.img`
   user-select: none;
 `

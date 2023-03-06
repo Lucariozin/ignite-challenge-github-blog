@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export const Container = styled(NavLink)`
   max-width: 26rem;
   padding: 2rem;
+  margin: 0 auto;
 
   border-radius: 10px;
   border: 2px solid ${({ theme }) => theme.palette.gray[700]};

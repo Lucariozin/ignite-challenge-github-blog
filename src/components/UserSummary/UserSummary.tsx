@@ -2,9 +2,11 @@ import { FaBuilding, FaGithub, FaUserFriends, FaExternalLinkAlt } from 'react-ic
 
 import {
   Container,
+  FirstColumn,
   Footer,
   FooterItem,
   GithubAnchor,
+  GithubUserInfoContainer,
   Header,
   UserBio,
   UserImage,
@@ -35,7 +37,28 @@ export const UserSummary = ({
 
   return (
     <Container>
-      <UserImage src={avatarUrl} alt="" width={148} height={148} />
+      <FirstColumn>
+        <UserImage src={avatarUrl} alt="" width={148} height={148} />
+
+        <GithubUserInfoContainer>
+          <FooterItem>
+            <FaGithub size={18} />
+            {nickName}
+          </FooterItem>
+
+          {company && (
+            <FooterItem>
+              <FaBuilding size={16} />
+              {company}
+            </FooterItem>
+          )}
+
+          <FooterItem>
+            <FaUserFriends size={20} />
+            {followersAmountText}
+          </FooterItem>
+        </GithubUserInfoContainer>
+      </FirstColumn>
 
       <Wrapper>
         <Header>
