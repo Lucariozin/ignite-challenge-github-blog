@@ -2,11 +2,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { useGithub } from '@contexts/GithubContext'
 
-import { PublicationSummary } from '@components/PublicationSummary'
+import { PublicationSummary, PublicationSummarySkeleton } from '@components/PublicationSummary'
 import { PublicationContent } from '@components/PublicationContent'
 
 export const Publication = () => {
-  const { user, publications } = useGithub()
+  const { user, publications, githubIssuesDataIsFetching } = useGithub()
 
   const params = useParams()
   const navigate = useNavigate()
@@ -17,16 +17,20 @@ export const Publication = () => {
 
   return (
     <>
-      <PublicationSummary
-        title={publication?.title}
-        nickName={user.nickName}
-        publicationUrl={publication?.publicationUrl}
-        commentsAmount={publication?.commentsAmount}
-        creationDate={publication?.creationDate}
-        goToThePreviousPage={goToThePreviousPage}
-      />
+      {githubIssuesDataIsFetching ? (
+        <PublicationSummarySkeleton />
+      ) : (
+        <PublicationSummary
+          title={publication?.title}
+          nickName={user.nickName}
+          publicationUrl={publication?.publicationUrl}
+          commentsAmount={publication?.commentsAmount}
+          creationDate={publication?.creationDate}
+          goToThePreviousPage={goToThePreviousPage}
+        />
+      )}
 
-      <PublicationContent content={publication?.body} />
+      {!githubIssuesDataIsFetching && <PublicationContent content={publication?.body} />}
     </>
   )
 }
