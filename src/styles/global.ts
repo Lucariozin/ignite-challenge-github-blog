@@ -13,5 +13,16 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.palette.gray[900]};
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.palette.gray[500]};
+      border-radius: 20px;
+    }
+
+    scrollbar-color: ${({ theme }) => theme.palette.gray[500]};
   }
 `
