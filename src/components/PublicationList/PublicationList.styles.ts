@@ -6,4 +6,9 @@ export const Container = styled.main`
   gap: 2rem;
 
   margin-top: 3rem;
+
+  ${({ theme }) => theme.breakpoints.down(474)} {
+    display: flex;
+    flex-direction: column;
+  }
 `
