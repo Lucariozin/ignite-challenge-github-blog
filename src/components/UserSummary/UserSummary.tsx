@@ -59,10 +59,10 @@ export const UserSummary = ({
               {nickName}
             </FooterItem>
 
-            {!company && (
+            {company && (
               <FooterItem>
                 <FaBuilding size={16} />
-                {'Rocketseat'}
+                {company}
               </FooterItem>
             )}
           </FooterItemGroup>

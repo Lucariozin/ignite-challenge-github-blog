@@ -43,6 +43,13 @@ export const LogoAnchor = styled(NavLink)`
     filter: brightness(1.2);
     outline: 0;
   }
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    & > img {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
 `
 
 export const LogoImg = styled.img`
