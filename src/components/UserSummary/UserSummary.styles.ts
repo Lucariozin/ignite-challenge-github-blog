@@ -11,15 +11,14 @@ export const Container = styled.div`
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme.palette.gray[800]};
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down(750)} {
     gap: 1.5rem;
     padding: 1.5rem;
-  }
-`
 
-export const FirstColumn = styled.div`
-  display: flex;
-  flex-direction: column;
+    & > img {
+      display: none;
+    }
+  }
 `
 
 export const UserImage = styled.img`
@@ -28,23 +27,6 @@ export const UserImage = styled.img`
 
   border-radius: 8px;
   user-select: none;
-
-  ${({ theme }) => theme.breakpoints.down('sm')} {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-`
-
-export const GithubUserInfoContainer = styled.div`
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  margin-top: 1.5rem;
-
-  ${({ theme }) => theme.breakpoints.down('md')} {
-    display: flex;
-  }
 `
 
 export const Wrapper = styled.div`
@@ -60,7 +42,20 @@ export const Header = styled.header`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 8px;
+  gap: 1.5rem;
+
+  & > img {
+    display: none;
+
+    width: 3rem;
+    height: 3rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    & > img {
+      display: block;
+    }
+  }
 `
 
 export const UserName = styled.h2`
@@ -68,8 +63,9 @@ export const UserName = styled.h2`
   font-weight: 700;
   color: ${({ theme }) => theme.palette.gray[100]};
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down(750)} {
     font-size: 1.25rem;
+    margin-right: auto;
   }
 `
 
@@ -96,7 +92,7 @@ export const GithubAnchor = styled.a`
     border-bottom: 1px solid ${({ theme }) => theme.palette.blue[400]};
   }
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down(750)} {
     font-size: 10px;
 
     & > svg {
@@ -110,7 +106,7 @@ export const UserBio = styled.p`
   line-height: 1.625rem;
   color: ${({ theme }) => theme.palette.gray[300]};
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down(750)} {
     font-size: 0.875rem;
   }
 `
@@ -122,8 +118,19 @@ export const Footer = styled.footer`
 
   margin-top: 1rem;
 
-  ${({ theme }) => theme.breakpoints.down('md')} {
-    display: none;
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    justify-content: space-between;
+  }
+`
+
+export const FooterItemGroup = styled.div`
+  display: flex;
+  height: 2.5rem;
+  gap: 1.5rem;
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 `
 
@@ -140,7 +147,7 @@ export const FooterItem = styled.span`
     color: ${({ theme }) => theme.palette.gray[500]};
   }
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down(750)} {
     font-size: 0.75rem;
 
     & > svg {

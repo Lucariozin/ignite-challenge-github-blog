@@ -2,11 +2,10 @@ import { FaBuilding, FaGithub, FaUserFriends, FaExternalLinkAlt } from 'react-ic
 
 import {
   Container,
-  FirstColumn,
   Footer,
   FooterItem,
+  FooterItemGroup,
   GithubAnchor,
-  GithubUserInfoContainer,
   Header,
   UserBio,
   UserImage,
@@ -37,31 +36,12 @@ export const UserSummary = ({
 
   return (
     <Container>
-      <FirstColumn>
-        <UserImage src={avatarUrl} alt="" width={148} height={148} />
-
-        <GithubUserInfoContainer>
-          <FooterItem>
-            <FaGithub size={18} />
-            {nickName}
-          </FooterItem>
-
-          {company && (
-            <FooterItem>
-              <FaBuilding size={16} />
-              {company}
-            </FooterItem>
-          )}
-
-          <FooterItem>
-            <FaUserFriends size={20} />
-            {followersAmountText}
-          </FooterItem>
-        </GithubUserInfoContainer>
-      </FirstColumn>
+      <UserImage src={avatarUrl} alt="" width={148} height={148} />
 
       <Wrapper>
         <Header>
+          <UserImage src={avatarUrl} alt="" width={48} height={48} />
+
           <UserName>{name}</UserName>
 
           <GithubAnchor href={githubUrl} target="_blank">
@@ -73,22 +53,26 @@ export const UserSummary = ({
         <UserBio>{bio}</UserBio>
 
         <Footer>
-          <FooterItem>
-            <FaGithub size={18} />
-            {nickName}
-          </FooterItem>
-
-          {company && (
+          <FooterItemGroup>
             <FooterItem>
-              <FaBuilding size={16} />
-              {company}
+              <FaGithub size={18} />
+              {nickName}
             </FooterItem>
-          )}
 
-          <FooterItem>
-            <FaUserFriends size={20} />
-            {followersAmountText}
-          </FooterItem>
+            {!company && (
+              <FooterItem>
+                <FaBuilding size={16} />
+                {'Rocketseat'}
+              </FooterItem>
+            )}
+          </FooterItemGroup>
+
+          <FooterItemGroup>
+            <FooterItem>
+              <FaUserFriends size={20} />
+              {followersAmountText}
+            </FooterItem>
+          </FooterItemGroup>
         </Footer>
       </Wrapper>
     </Container>
