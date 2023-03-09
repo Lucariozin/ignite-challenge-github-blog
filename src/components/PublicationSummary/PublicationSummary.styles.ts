@@ -10,6 +10,10 @@ export const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
   background-color: ${({ theme }) => theme.palette.gray[800]};
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    padding: 1.5rem;
+  }
 `
 
 export const Header = styled.header`
@@ -43,6 +47,14 @@ export const GoBackButton = styled.button`
     filter: brightness(1.2);
     border-bottom: 1px solid ${({ theme }) => theme.palette.blue[400]};
   }
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    font-size: 10px;
+
+    & > svg {
+      width: 12px;
+    }
+  }
 `
 
 export const GithubAnchor = styled.a`
@@ -67,6 +79,14 @@ export const GithubAnchor = styled.a`
     filter: brightness(1.2);
     border-bottom: 1px solid ${({ theme }) => theme.palette.blue[400]};
   }
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    font-size: 10px;
+
+    & > svg {
+      width: 10px;
+    }
+  }
 `
 
 export const Title = styled.h2`
@@ -75,12 +95,33 @@ export const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.palette.gray[100]};
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    font-size: 1.25rem;
+  }
 `
 
 export const Footer = styled.footer`
+  width: 100%;
+
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    justify-content: space-between;
+  }
+`
+
+export const FooterItemGroup = styled.div`
+  display: flex;
+  gap: 1.5rem;
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    height: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `
 
 export const FooterItem = styled.span`
@@ -92,5 +133,14 @@ export const FooterItem = styled.span`
 
   & > svg {
     color: ${({ theme }) => theme.palette.gray[500]};
+  }
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    font-size: 0.75rem;
+
+    & > svg {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 `

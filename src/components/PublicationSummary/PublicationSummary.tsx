@@ -3,7 +3,16 @@ import { FaCalendarDay, FaComment, FaExternalLinkAlt, FaGithub } from 'react-ico
 
 import { formatDate } from '@utils/formatDate'
 
-import { Container, Footer, FooterItem, GithubAnchor, GoBackButton, Header, Title } from './PublicationSummary.styles'
+import {
+  Container,
+  Footer,
+  FooterItem,
+  FooterItemGroup,
+  GithubAnchor,
+  GoBackButton,
+  Header,
+  Title,
+} from './PublicationSummary.styles'
 
 interface PublicationSummaryProps {
   title: string
@@ -41,17 +50,21 @@ export const PublicationSummary = ({
       <Title>{title}</Title>
 
       <Footer>
-        <FooterItem>
-          <FaGithub size={18} /> {nickName}
-        </FooterItem>
+        <FooterItemGroup>
+          <FooterItem>
+            <FaGithub size={18} /> {nickName}
+          </FooterItem>
 
-        <FooterItem>
-          <FaCalendarDay size={18} /> {formattedCreationDate}
-        </FooterItem>
+          <FooterItem>
+            <FaCalendarDay size={18} /> {formattedCreationDate}
+          </FooterItem>
+        </FooterItemGroup>
 
-        <FooterItem>
-          <FaComment size={18} /> {commentsAmountText}
-        </FooterItem>
+        <FooterItemGroup>
+          <FooterItem>
+            <FaComment size={18} /> {commentsAmountText}
+          </FooterItem>
+        </FooterItemGroup>
       </Footer>
     </Container>
   )
