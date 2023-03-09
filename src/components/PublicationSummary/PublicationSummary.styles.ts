@@ -90,6 +90,7 @@ export const GithubAnchor = styled.a`
 `
 
 export const Title = styled.h2`
+  width: 100%;
   margin: 1.25rem 0 1rem 0;
 
   font-size: 1.5rem;
