@@ -34,23 +34,31 @@ export const Container = styled(NavLink)`
 
 export const SkeletonContainer = styled.div`
   max-width: 26rem;
+  width: 100%;
   padding: 2rem;
+  margin: 0 auto;
 
   border-radius: 10px;
   border: 2px solid ${({ theme }) => theme.palette.gray[700]};
   background-color: ${({ theme }) => theme.palette.gray[700]};
 
   cursor: not-allowed;
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    padding: 1.5rem;
+  }
 `
 
 export const Header = styled.header`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 1rem;
 `
 
 export const Title = styled.h4`
   max-width: 17.75rem;
+  width: 100%;
 
   font-size: 1.25rem;
   font-weight: 700;
@@ -68,6 +76,8 @@ export const PublicationDate = styled.span`
 
   font-size: 0.875rem;
   color: ${({ theme }) => theme.palette.gray[400]};
+
+  white-space: nowrap;
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
     font-size: 0.75rem;

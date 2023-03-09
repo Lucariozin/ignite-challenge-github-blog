@@ -46,7 +46,7 @@ interface ContainerProps {
   }
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.span<ContainerProps>`
   @keyframes Skeleton {
     0% {
       background-color: ${({ theme }) => theme.palette.gray[600]};
@@ -72,6 +72,8 @@ export const Container = styled.div<ContainerProps>`
   ${({ theme, mediaQueries }) => mediaQueries?.sm && theme.breakpoints.down('sm')} {
     ${({ mediaQueries }) => formatCssObject(mediaQueries?.sm)}
   }
+
+  display: block;
 
   border-radius: 2px;
 
