@@ -3,8 +3,6 @@ import { Dispatch, SetStateAction, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import * as zod from 'zod'
-
 import { FaSearch } from 'react-icons/fa'
 
 import { fetchGithubIssuesData } from '@services/github'
@@ -12,6 +10,8 @@ import { fetchGithubIssuesData } from '@services/github'
 import { delay } from '@utils/delay'
 
 import { useGithub } from '@contexts/GithubContext'
+
+import { PublicationFormInputs, zodSchema } from './zodSchema'
 
 import {
   Container,
@@ -28,12 +28,6 @@ interface FindPublicationsProps {
   isLoading: boolean
   setIsLoading: Dispatch<SetStateAction<boolean>>
 }
-
-const zodSchema = zod.object({
-  query: zod.string().transform((query) => query.trim()),
-})
-
-type PublicationFormInputs = zod.infer<typeof zodSchema>
 
 export const FindPublications = ({
   publicationsAmount = 0,
