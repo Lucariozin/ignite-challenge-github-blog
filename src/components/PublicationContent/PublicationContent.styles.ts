@@ -49,4 +49,41 @@ export const Container = styled.div`
     font-size: 1rem;
     color: ${({ theme }) => theme.palette.blue[400]};
   }
+
+  ${({ theme }) => theme.breakpoints.down(750)} {
+    padding: 2.5rem 0.5rem;
+
+    & h1,
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    & h3 {
+      font-size: 1.125rem;
+    }
+
+    & h4 {
+      font-size: 1rem;
+    }
+
+    & h5 {
+      font-size: 0.875rem;
+    }
+
+    & h6 {
+      font-size: 0.75rem;
+    }
+
+    & p {
+      font-size: 0.875rem;
+    }
+
+    & li {
+      font-size: 0.875rem;
+    }
+
+    & a {
+      font-size: 0.875rem;
+    }
+  }
 `
