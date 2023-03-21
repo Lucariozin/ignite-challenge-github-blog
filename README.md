@@ -2,13 +2,15 @@
 
 Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
 
-## Home - Desktop
+## Desktop
+
+### Home
 
 <img src="./public/readme-images/home-desktop-01.png" alt="" />
 <img src="./public/readme-images/home-desktop-02.png" alt="" />
 <img src="./public/readme-images/home-desktop-03.png" alt="" />
 
-## Publications - Desktop
+### Publications
 
 <img src="./public/readme-images/publications-desktop-01.png" alt="" />
 
