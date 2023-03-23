@@ -14,7 +14,9 @@ Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
 
 <img src="./public/readme-images/publications-desktop-01.png" alt="" />
 
-## Home - Mobile
+## Mobile
+
+### Home
 
 <div>
   <img src="./public/readme-images/home-mobile-01.png" alt="" />⠀⠀⠀⠀⠀⠀⠀⠀⠀
