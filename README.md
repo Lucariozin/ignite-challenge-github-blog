@@ -2,7 +2,7 @@
 
 Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
 
-## Desktop
+## Desktop:
 
 ### Home
 
@@ -14,7 +14,7 @@ Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
 
 <img src="./public/readme-images/publications-desktop-01.png" alt="" />
 
-## Mobile
+## Mobile:
 
 ### Home
 
