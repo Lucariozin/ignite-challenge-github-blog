@@ -1,4 +1,4 @@
-<h1 align="center">Rocketseat | Github Blog</h1>
+<h1 align="center">👑 Rocketseat | Github Blog 👑</h1>
 
 Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
 
