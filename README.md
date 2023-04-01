@@ -7,7 +7,7 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
   <img src="https://img.shields.io/badge/version-v1.0.0-blue" alt="" />
 </div>
 
-### 
+## 
 
 <img src="./public/readme-images/home-desktop-01.png" alt="" />
 
