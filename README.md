@@ -1,6 +1,6 @@
 <h1 align="center">👑 Rocketseat | Github Blog 👑</h1>
 
-Projeto desenvolvido na trilha de ReactJS do Ignite da Rocketseat.
+Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS do Ignite da Rocketseat com o objetivo de exibir issues de um determinado repositório utilizando as APIs públicas do Github.
 
 ## Desktop:
 
