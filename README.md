@@ -13,8 +13,9 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
 
 ## ✔️ Tecnologias utilizadas
 
-- ``TypeScript``
+- ``Vite``
 - ``ReactJS``
+- ``TypeScript``
 
 ## Desktop:
 
