@@ -16,6 +16,7 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
 - ``Vite``
 - ``ReactJS``
 - ``TypeScript``
+- ``React Hook Form``
 
 ## Desktop:
 
