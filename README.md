@@ -17,6 +17,7 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
 - ``React Hook Form``
 - ``Zod``
 - ``React Markdown``
+- ``Styled Components``
 
 ## Desktop:
 
