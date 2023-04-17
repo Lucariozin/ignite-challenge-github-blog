@@ -9,8 +9,6 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
 
 <img src="./public/readme-images/home-desktop-01.png" alt="" />
 
-##
-
 ## ✔️ Tecnologias utilizadas
 
 - ``Vite``
