@@ -20,28 +20,30 @@ Aplicação Front-end desenvolvida como um desafio proposto na trilha de ReactJS
 - ``React Icons``
 - ``Styled Components``
 
-## Desktop:
+## Páginas
 
-### Home
+### Desktop:
+
+#### Home
 
 <img src="./public/readme-images/home-desktop-01.png" alt="" />
 <img src="./public/readme-images/home-desktop-02.png" alt="" />
 <img src="./public/readme-images/home-desktop-03.png" alt="" />
 
-### Publications
+#### Publications
 
 <img src="./public/readme-images/publications-desktop-01.png" alt="" />
 
-## Mobile:
+### Mobile:
 
-### Home
+#### Home
 
 <div>
   <img src="./public/readme-images/home-mobile-01.png" alt="" />⠀⠀⠀⠀⠀⠀⠀⠀⠀
   <img src="./public/readme-images/home-mobile-02.png" alt="" />
 </div>
 
-### Home | Publications
+#### Home | Publications
 
 <div>
   <img src="./public/readme-images/home-mobile-03.png" alt="" />⠀⠀⠀⠀⠀⠀⠀⠀⠀
